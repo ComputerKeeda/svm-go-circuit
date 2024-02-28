@@ -9,6 +9,7 @@ import (
 
 	"github.com/ComputerKeeda/svm-go-circuit/types"
 	"github.com/consensys/gnark-crypto/ecc"
+
 	// tedwards "github.com/consensys/gnark-crypto/ecc/twistededwards"
 	"github.com/btcsuite/btcutil/base58"
 	"github.com/consensys/gnark/backend/groth16"
@@ -90,7 +91,7 @@ func GetMerkleRoot(transactions []types.SVMTransaction) string {
 	return merkleTree[0]
 }
 
-func GenerateProof(values types.SVMBatchStruct, podNumber int) (any, string, []byte, error) {
+func GenerateProof(values types.SVMPodStruct, podNumber int) (any, string, []byte, error) {
 	ccs := ComputeCCS()
 	// snarkField, err := twistededwards.GetSnarkField(tedwards.BLS12_381)
 	// if err != nil {
